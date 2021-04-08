@@ -21,7 +21,7 @@ public class Card {
     private Integer answerAmount;
     private Date dueDate;
 
-    private Card(){
+    public Card(){
 
     }
 }

@@ -21,7 +21,7 @@ public class Deck implements Serializable {
     private String category;
     private List<Card> cards;
 
-    private Deck(){
+    public Deck(){
 
     }
 }

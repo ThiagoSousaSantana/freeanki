@@ -15,6 +15,7 @@ public class Deck implements Serializable {
 
     @Id
     private UUID id;
+    private UUID idUser;
     private String name;
     private String description;
     private String tags;

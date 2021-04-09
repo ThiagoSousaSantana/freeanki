@@ -6,14 +6,14 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import java.util.Date;
+import java.util.UUID;
 
 @Data
 public class Card {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String deckId;
+    private UUID id;
+    private UUID deckId;
     private String question;
     private String answer;
     private Date lastExecutedAt;
@@ -21,7 +21,5 @@ public class Card {
     private Integer answerAmount;
     private Date dueDate;
 
-    public Card(){
 
-    }
 }

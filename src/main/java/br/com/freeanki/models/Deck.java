@@ -1,13 +1,26 @@
 package br.com.freeanki.models;
 
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
-public class Deck {
+@Data
+public class Deck implements Serializable {
 
-    private String id;
+    @Id
+    private UUID id;
+    private UUID idUser;
     private String name;
     private String description;
     private String tags;
     private String category;
     private List<Card> cards;
+
+
 }

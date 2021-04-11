@@ -11,9 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 @ControllerAdvice
 public class ResourceExceptionHandler {
 
+    public static final String OBJECT_NOT_FOUND = "Object not found";
+
     @ExceptionHandler(ObjectNotFoundException.class)
     public ResponseEntity<StandardError> objectNotFound(ObjectNotFoundException e, HttpServletRequest request) {
-        StandardError error = new StandardError(HttpStatus.NOT_FOUND.value(), "Object not found", e.getMessage(), System.currentTimeMillis(), request.getRequestURI());
+        StandardError error = new StandardError(HttpStatus.NOT_FOUND.value(),
+                OBJECT_NOT_FOUND, e.getMessage(), System.currentTimeMillis(), request.getRequestURI());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 

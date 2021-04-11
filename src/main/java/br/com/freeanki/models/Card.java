@@ -1,10 +1,8 @@
 package br.com.freeanki.models;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.UUID;
 
@@ -20,6 +18,4 @@ public class Card {
     private Integer lastUserAnswer;
     private Integer answerAmount;
     private Date dueDate;
-
-
 }

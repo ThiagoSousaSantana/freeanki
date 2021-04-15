@@ -17,7 +17,7 @@ public class DeckService {
     private DeckRepository deckRepository;
 
     public Deck insert(Deck deck) {
-        deck.setId(null);
+        deck.setId(UUID.randomUUID());
         return deckRepository.save(deck);
     }
 

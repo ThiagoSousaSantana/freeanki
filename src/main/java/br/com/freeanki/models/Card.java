@@ -3,11 +3,12 @@ package br.com.freeanki.models;
 import lombok.Data;
 
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 @Data
-public class Card {
+public class Card implements Serializable {
 
     @Id
     private UUID id;

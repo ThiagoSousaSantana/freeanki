@@ -7,6 +7,8 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
+import static java.util.Collections.unmodifiableList;
+
 @Data
 public class Deck implements Serializable {
 
@@ -18,4 +20,8 @@ public class Deck implements Serializable {
     private String tags;
     private String category;
     private List<Card> cards;
+
+    public List<Card> getCards() {
+        return unmodifiableList(cards);
+    }
 }

@@ -36,7 +36,7 @@ public class DeckService {
     }
 
     public Deck update(UUID id, Deck deck) {
-        Deck updateDeck = findById(id);
+        var updateDeck = findById(id);
         updateData(updateDeck, deck);
         return deckRepository.save(updateDeck);
 

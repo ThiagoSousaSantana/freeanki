@@ -13,6 +13,7 @@ public class User {
     @Id
     private UUID id;
     private String email;
+    private String name;
     private String password;
     private Integer easyCardAmount;
     private Integer mediumCardAmount;

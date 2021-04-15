@@ -25,7 +25,7 @@ public class DeckController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Deck> findByid(@PathVariable UUID id) {
+    public ResponseEntity<Deck> findById(@PathVariable UUID id) {
         var deck = deckService.findById(id);
         return ResponseEntity.ok().body(deck);
     }

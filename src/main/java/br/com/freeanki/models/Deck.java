@@ -1,6 +1,7 @@
 package br.com.freeanki.models;
 
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -10,6 +11,7 @@ import java.util.UUID;
 import static java.util.Collections.unmodifiableList;
 
 @Data
+@Document
 public class Deck implements Serializable {
 
     @Id

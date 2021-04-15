@@ -4,7 +4,6 @@ import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
-import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -19,5 +18,4 @@ public class User {
     private Integer easyCardAmount;
     private Integer mediumCardAmount;
     private Integer hardCardAmount;
-    private List<Deck> decks;
 }

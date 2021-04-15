@@ -16,7 +16,7 @@ public class UserService {
     private UserRepository userRepository;
 
     public User insert(User user) {
-        user.setId(null);
+        user.setId(UUID.randomUUID());
         return userRepository.save(user);
     }
 
@@ -26,13 +26,12 @@ public class UserService {
     }
 
     public User update(UUID id, User user) {
-        User updateUser = findById(id);
+        var updateUser = findById(id);
         updateData(updateUser, user);
         return userRepository.save(updateUser);
     }
 
     private void updateData(User updateUser, User user) {
-        updateUser.setDecks(user.getDecks());
         updateUser.setName(user.getName());
         updateUser.setPassword(user.getPassword());
     }

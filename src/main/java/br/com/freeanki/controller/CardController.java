@@ -19,7 +19,7 @@ public class CardController {
     @Autowired
     private CardService cardService;
 
-    @GetMapping("/idDeck/{idDeck}")
+    @GetMapping("/idDeck/{id}")
     public ResponseEntity<List<Card>> findAll(@PathVariable UUID id) {
         var cardList = cardService.findAll(id);
         return ResponseEntity.ok().body(cardList);

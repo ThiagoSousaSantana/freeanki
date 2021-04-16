@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class CardService {
@@ -23,10 +24,10 @@ public class CardService {
 
     public List<Card> findAll(UUID idDeck) {
         var card = cardRepository.findAll();
-        card.stream().filter(itemCard -> itemCard.getDeckId().equals(idDeck));
-        return card;
+        var cardFilter = card.stream().filter(itemCard -> itemCard.getDeckId().equals(idDeck));
+        var result = cardFilter.collect(Collectors.toList());
+        return result;
     }
-
     public Card findById(UUID id) {
         Optional<Card> card = cardRepository.findById(id);
         return card.orElseThrow(() -> new ObjectNotFoundException("Object not found id " + id));

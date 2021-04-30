@@ -26,4 +26,20 @@ public class Deck implements Serializable {
     public List<Card> getCards() {
         return unmodifiableList(cards);
     }
+
+    public Deck(UUID id, Deck deck) {
+        this.id = id;
+        this.idUser = deck.getIdUser();
+        this.name = deck.getName();
+        this.description = deck.getDescription();
+        this.tags = deck.getTags();
+        this.category = deck.getCategory();
+        this.cards = deck.getCards();
+    }
+
+    public Deck() {
+
+    }
+
+
 }

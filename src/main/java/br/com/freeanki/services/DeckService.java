@@ -36,16 +36,9 @@ public class DeckService {
     }
 
     public Deck update(UUID id, Deck deck) {
-        var updateDeck = findById(id);
-        updateData(updateDeck, deck);
-        return deckRepository.save(updateDeck);
+        findById(id);
+        return deckRepository.save(new Deck(id, deck));
 
     }
 
-    private void updateData(Deck updateDeck, Deck deck) {
-        updateDeck.setName(deck.getName());
-        updateDeck.setCategory(deck.getCategory());
-        updateDeck.setDescription(deck.getDescription());
-        updateDeck.setTags(deck.getDescription());
-    }
 }
